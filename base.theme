@@ -1,19 +1,25 @@
 {% raw %}
 
+{{ '{% import' }} "{{themeDir}}/base.macro" {{ ' as themeMacros with context %}' }}
 {% extends "2.1/omni.theme" %}
 {% import '2.1/omni.macros' as omniMacros with context %}
 
 {%- block OMNI_DOCUMENT_BODY_HEADER -%}
-Meu header {{viewSize}}
-<hr>
+
 {%- endblock -%}
 
 {%- block OMNI_DOCUMENT_BODY -%}
-Meu corpo {{viewSize}}
+
+
+<div class="pages" id="page-mainContent">
+	{{ themeMacros.nav() }}
+</div>
+
+
 {%- endblock -%}
 
 {%- block OMNI_DOCUMENT_BODY_FOOTER -%}
-Meu rodapé {{viewSize}}
+
 {%- endblock -%}
 
 

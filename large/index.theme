@@ -1,1 +1,24 @@
 {{ '{% extends' }} "{{themeDir}}/base.theme" {{'%}'}}
+
+{% raw %}
+
+{%- block OMNI_EXTRA_CSS_HEADER -%}
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+	<link href="{{theme_cdn_dir}}/static/css/materialize.min.css?nocache={{nocache}}" rel="stylesheet">
+	<link href="{{theme_cdn_dir}}/static/css/style.css?nocache={{nocache}}" rel="stylesheet">
+
+{%- endblock -%}
+
+
+
+{%- block OMNI_EXTRA_FOOTER_JS -%}
+	{{super()}}
+
+	<script src="{{theme_cdn_dir}}/static/js/materialize.min.js?nocache={{nocache}}"></script>
+	<script src="{{theme_cdn_dir}}/static/js/theme.js?nocache={{nocache}}"></script>
+
+{%- endblock -%}
+
+{% endraw %}
