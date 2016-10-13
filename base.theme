@@ -1,25 +1,45 @@
+{{ '{% import' }} "{{themeDir}}/base.macro" {{ ' as themeMacros with context %}' }}
+
 {% raw %}
 
-{{ '{% import' }} "{{themeDir}}/base.macro" {{ ' as themeMacros with context %}' }}
 {% extends "2.1/omni.theme" %}
 {% import '2.1/omni.macros' as omniMacros with context %}
 
 {%- block OMNI_DOCUMENT_BODY_HEADER -%}
+<script type="text/template" id="ad_view_template_default">
+	{{themeMacros.ad_view_template(cssClass="default")}}
+</script>
 
+<script type="text/template" id="catalog_control_template_default">
+	{{themeMacros.catalog_control_template(cssClass="default",type="default")}}
+</script>
 {%- endblock -%}
 
 {%- block OMNI_DOCUMENT_BODY -%}
 
-
 <div class="pages" id="page-mainContent">
-	{{ themeMacros.nav() }}
-</div>
+  {{ themeMacros.nav() }}
+    <div class="pages" id="page-homePage">
+    {{ themeMacros.parallaxInit() }}
+    {{ themeMacros.itensProv() }}
+  </div>
+  <div class="pages" id="page-catalogPage">
+    {{ themeMacros.itensProv() }}
+    <div class="catalogContainerMain" id="catalogContainerMain" omni-catalog-limit=2>
 
+         <div class="catalogControls"></div>
+         <hr>
+         <div class="catalogContainer row"></div>
+         <hr>
+         <div class="catalogControls"></div>
+</div>
+  </div>
+</div>
 
 {%- endblock -%}
 
 {%- block OMNI_DOCUMENT_BODY_FOOTER -%}
-
+{{ omniMacros.debugInfo(shop) }}
 {%- endblock -%}
 
 

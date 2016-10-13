@@ -1,26 +1,110 @@
 {% raw %}
 
 {% macro nav() %}
+  <div class="navbar-fixed">
+    <nav class="black navHeight z-depth-3">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo"><img src="{{ shop.shopLogo }}" alt="Imagem logo" class="responsive-img imgLogo" /></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class=" hide-on-med-and-down navBoxIcons">
+          {% for link in shop.links.navbar.itens%}
+            <li class="navHeight"><a href="{{ shop.links.navbar.itens[link].href }}" itemid="{{ shop.links.navbar.itens[link].id }}" class="navText navHeight {{shop.links.navbar.itens[link].cssClass}} item">{{ shop.links.navbar.itens[link].label }}</a></li>
+          {% endfor %}
+          <a class="waves-effect waves-light right navHeight navText"><i class="material-icons left">account_circle</i>Conta</a>
+          <a class="waves-effect waves-light right navHeight navText"><i class="material-icons left">shopping_cart</i>Carrinho</a>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          {% for link in shop.links.navbar.itens%}
+          <li class=""><a href="{{ shop.links.navbar.itens[link].href }}" itemid="{{ shop.links.navbar.itens[link].id }}" class="navText  {{shop.links.navbar.itens[link].cssClass}} item">{{ shop.links.navbar.itens[link].label }}</a></li>
+          {% endfor %}
+          <li><a class="waves-effect waves-light navText">Conta</a></li>
+          <li><a class="waves-effect waves-light navText">Carrinho</a></li>
+        </ul>
+      </div>
+    </nav>
+</div>
+{% endmacro %}
 
-<nav>
-  <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">Logo</a>
-    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">Javascript</a></li>
-      <li><a href="mobile.html">Mobile</a></li>
-    </ul>
-    <ul class="side-nav" id="mobile-demo">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">Javascript</a></li>
-      <li><a href="mobile.html">Mobile</a></li>
-    </ul>
+
+
+{% macro mediaSlider() %}
+
+<div class="slider" style="margin-top: 80px;">
+   <ul class="slides">
+     <li>
+       <img src="{{theme_cdn_dir}}/static/img/1.jpg"> <!-- random image -->
+     </li>
+     <li>
+       <img src="{{theme_cdn_dir}}/static/img/2.jpg"> <!-- random image -->
+     </li>
+     <li>
+       <img src="{{theme_cdn_dir}}/static/img/3.jpg"> <!-- random image -->
+     </li>
+   </ul>
+ </div>
+
+{% endmacro %}
+
+{% macro parallaxInit() %}
+<div class="parallax-container" style="height: 700px;">
+  <div class="parallax black"><img src="{{theme_cdn_dir}}/static/img/5.jpg"></div>
+</div>
+{% endmacro %}
+
+{% macro itensProv() %}
+<div class="row">
+  <div class="col s12 left">
+    <h4 class="navText">Produtos</h4>
   </div>
-</nav>
 
+  <div class="col s12 m6 l3 center">
+    <div class="card">
+      <div class="card-content white-text">
+        <span class="card-title black-text"><b>Nome do Produto</b></span>
+        <img src="{{theme_cdn_dir}}/static/img/pomada_killer.jpg" class="responsive-img" />
+      </div>
+      <div class="card-action">
+        <p><b>Pomada capilar de alta fixação e efeito Matte (opaco). Ideal para modelar cabelos curtos e médios por longos períodos.</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3 center">
+    <div class="card">
+      <div class="card-content white-text">
+        <span class="card-title black-text"><b>Nome do Produto</b></span>
+        <img src="{{theme_cdn_dir}}/static/img/pomada_killer.jpg" class="responsive-img" />
+      </div>
+      <div class="card-action">
+        <p><b>Pomada capilar de alta fixação e efeito Matte (opaco). Ideal para modelar cabelos curtos e médios por longos períodos.</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3 center">
+    <div class="card">
+      <div class="card-content white-text">
+        <span class="card-title black-text"><b>Nome do Produto</b></span>
+        <img src="{{theme_cdn_dir}}/static/img/pomada_killer.jpg" class="responsive-img" />
+      </div>
+      <div class="card-action">
+        <p><b>Pomada capilar de alta fixação e efeito Matte (opaco). Ideal para modelar cabelos curtos e médios por longos períodos.</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3 center">
+    <div class="card">
+      <div class="card-content white-text">
+        <span class="card-title black-text"><b>Nome do Produto</b></span>
+        <img src="{{theme_cdn_dir}}/static/img/pomada_killer.jpg" class="responsive-img" />
+      </div>
+      <div class="card-action">
+        <p><b>Pomada capilar de alta fixação e efeito Matte (opaco). Ideal para modelar cabelos curtos e médios por longos períodos.</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 ">
+      <h5 class="navText right" style="color: rgb(90, 51, 44);">Ver todos os produtos</h5>
+  </div>
+</div>
 {% endmacro %}
 
 {% endraw %}

@@ -5,9 +5,10 @@
 {%- block OMNI_EXTRA_CSS_HEADER -%}
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
-	<link href="{{theme_cdn_dir}}/static/css/materialize.min.css?nocache={{nocache}}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<link href="{{theme_cdn_dir}}/static/css/materialize.css?nocache={{nocache}}" rel="stylesheet">
 	<link href="{{theme_cdn_dir}}/static/css/style.css?nocache={{nocache}}" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 {%- endblock -%}
 
